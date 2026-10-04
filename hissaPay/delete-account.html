@@ -1,333 +1,592 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <meta name="description"
-          content="Request deletion of your HissaPay account and associated data.">
+    <title>Delete Account - HissaPay</title>
 
-    <meta name="theme-color"
-          content="#2563eb">
-
-    <title>HissaPay Account Deletion</title>
-
-    <link rel="stylesheet"
-          href="../style.css">
+    <meta
+        name="description"
+        content="Request permanent deletion of your HissaPay account."
+    >
 
     <style>
 
-        .delete-page {
-            padding: 90px 0;
+        * {
+            box-sizing: border-box;
         }
 
-        .delete-container {
-            max-width: 800px;
+        body {
+            margin: 0;
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Arial,
+                sans-serif;
+
+            background: #f7f9f8;
+            color: #263b33;
+            min-height: 100vh;
         }
 
-        .delete-header {
-            margin-bottom: 45px;
+        .page {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 16px;
         }
 
-        .delete-header h1 {
-            font-size: clamp(2.4rem, 5vw, 4rem);
-            line-height: 1.1;
-            letter-spacing: -1.5px;
-            margin-bottom: 18px;
-        }
-
-        .delete-header p {
-            color: #64748b;
-            font-size: 1.05rem;
-        }
-
-        .delete-card {
-            padding: 35px;
-
-            border:
-                1px solid #e2e8f0;
-
-            border-radius: 18px;
+        .card {
+            width: 100%;
+            max-width: 500px;
 
             background: #ffffff;
 
+            border-radius: 18px;
+
+            padding: 32px;
+
             box-shadow:
-                0 15px 40px rgba(15, 23, 42, 0.07);
-
-            margin-bottom: 30px;
+                0 8px 30px rgba(0, 0, 0, 0.08);
         }
 
-        .delete-card h2 {
-            font-size: 1.45rem;
-            margin-bottom: 15px;
+        .brand {
+            text-align: center;
+            margin-bottom: 28px;
         }
 
-        .delete-card p {
-            color: #526071;
-            margin-bottom: 15px;
+        .brand-icon {
+            width: 58px;
+            height: 58px;
+
+            margin: 0 auto 12px;
+
+            border-radius: 16px;
+
+            background: #263b33;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #ffffff;
+
+            font-size: 25px;
+            font-weight: 700;
         }
 
-        .delete-card ul {
-            margin:
-                15px 0 20px 22px;
+        .brand-name {
+            font-size: 25px;
+            font-weight: 700;
+            margin: 0;
         }
 
-        .delete-card li {
-            color: #526071;
-            margin-bottom: 9px;
+        .brand-subtitle {
+            margin-top: 6px;
+            color: #718078;
+            font-size: 14px;
         }
 
-        .warning-card {
-            background: #fff7ed;
-            border-color: #fed7aa;
+        h1 {
+            margin: 0 0 12px;
+
+            font-size: 25px;
+
+            text-align: center;
+
+            color: #263b33;
         }
 
-        .warning-card h2 {
-            color: #9a3412;
+        .description {
+            text-align: center;
+
+            color: #68766f;
+
+            line-height: 1.6;
+
+            font-size: 15px;
+
+            margin-bottom: 26px;
         }
 
-        .email-request {
-            margin-top: 25px;
+        .warning {
+            background: #fff7e6;
 
-            padding: 22px;
+            border: 1px solid #f1d59b;
+
+            color: #765719;
 
             border-radius: 12px;
 
-            background: #eef4ff;
+            padding: 14px 16px;
 
-            border:
-                1px solid #d9e7ff;
+            font-size: 14px;
+
+            line-height: 1.5;
+
+            margin-bottom: 24px;
         }
 
-        .email-request p {
-            margin-bottom: 12px;
+        .warning strong {
+            display: block;
+            margin-bottom: 4px;
         }
 
-        .email-button {
-            display: inline-flex;
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            color: #34463e;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+
+            padding: 13px 14px;
+
+            border: 1px solid #d5ddd9;
+
+            border-radius: 10px;
+
+            background: #ffffff;
+
+            font-size: 15px;
+
+            color: #263b33;
+
+            outline: none;
+
+            transition:
+                border-color 0.2s,
+                box-shadow 0.2s;
+        }
+
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #263b33;
+
+            box-shadow:
+                0 0 0 3px rgba(38, 59, 51, 0.10);
+        }
+
+        .password-container {
+            position: relative;
+        }
+
+        .password-container input {
+            padding-right: 70px;
+        }
+
+        .show-password {
+            position: absolute;
+
+            right: 12px;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            border: none;
+
+            background: transparent;
+
+            color: #53665d;
+
+            font-size: 13px;
+
+            cursor: pointer;
+
+            padding: 5px;
+        }
+
+        .show-password:hover {
+            color: #263b33;
+        }
+
+        .confirmation {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 10px;
+
+            margin: 22px 0;
+        }
+
+        .confirmation input {
+            margin-top: 3px;
+
+            width: 17px;
+            height: 17px;
+
+            cursor: pointer;
+        }
+
+        .confirmation label {
+            margin: 0;
+
+            font-size: 13px;
+
+            font-weight: 400;
+
+            line-height: 1.5;
+
+            color: #58675f;
+
+            cursor: pointer;
+        }
+
+        .delete-button {
+            width: 100%;
+
+            border: none;
+
+            border-radius: 10px;
+
+            padding: 14px 18px;
+
+            background: #b42318;
+
+            color: #ffffff;
+
+            font-size: 15px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition:
+                background 0.2s,
+                opacity 0.2s;
+        }
+
+        .delete-button:hover {
+            background: #941b12;
+        }
+
+        .delete-button:disabled {
+            opacity: 0.6;
+
+            cursor: not-allowed;
+        }
+
+        .back-link {
+            display: block;
+
+            text-align: center;
+
+            margin-top: 22px;
+
+            color: #263b33;
+
+            text-decoration: none;
+
+            font-size: 14px;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .message {
+            display: none;
+
+            border-radius: 12px;
+
+            padding: 15px 16px;
+
+            margin-top: 20px;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+        }
+
+        .message.error {
+            background: #fff0ef;
+
+            border: 1px solid #f0b7b2;
+
+            color: #8a1c13;
+        }
+
+        .message.success {
+            background: #edf8f1;
+
+            border: 1px solid #b8dec5;
+
+            color: #205c35;
+        }
+
+        .success-content {
+            display: none;
+
+            text-align: center;
+        }
+
+        .success-icon {
+            width: 64px;
+            height: 64px;
+
+            margin: 0 auto 18px;
+
+            border-radius: 50%;
+
+            background: #e6f5eb;
+
+            color: #267044;
+
+            display: flex;
 
             align-items: center;
 
             justify-content: center;
 
-            padding:
-                12px 18px;
+            font-size: 30px;
+        }
 
-            border-radius: 10px;
+        .success-content h2 {
+            margin: 0 0 10px;
 
-            background: #2563eb;
+            font-size: 23px;
 
-            color: #ffffff;
+            color: #263b33;
+        }
 
-            font-weight: 750;
+        .success-content p {
+            color: #68766f;
+
+            line-height: 1.6;
+
+            font-size: 15px;
+        }
+
+        .privacy-link {
+            text-align: center;
+
+            margin-top: 25px;
+
+            font-size: 13px;
+        }
+
+        .privacy-link a {
+            color: #263b33;
 
             text-decoration: none;
-
-            margin-top: 8px;
         }
 
-        .email-button:hover {
-            background: #1d4ed8;
-        }
-
-        .delete-back {
-            margin-top: 40px;
-        }
-
-        .delete-back a {
-            color: #2563eb;
-
-            font-weight: 700;
-
-            text-decoration: none;
-        }
-
-        .delete-back a:hover {
+        .privacy-link a:hover {
             text-decoration: underline;
         }
 
-    </style>
+        .security-note {
+            margin-top: 22px;
 
+            text-align: center;
+
+            color: #7a8781;
+
+            font-size: 12px;
+
+            line-height: 1.5;
+        }
+
+        @media (max-width: 480px) {
+
+            .page {
+                padding: 20px 12px;
+            }
+
+            .card {
+                padding: 24px 20px;
+
+                border-radius: 15px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            .brand-name {
+                font-size: 23px;
+            }
+        }
+
+    </style>
 </head>
 
 
 <body>
 
+<div class="page">
 
-<!-- =========================
-     NAVIGATION
-========================= -->
+    <div class="card">
 
-<header class="navbar">
+        <!-- BRAND -->
 
-    <div class="container nav-container">
+        <div class="brand">
 
-        <a href="../index.html"
-           class="brand">
-
-            <span class="brand-icon">
+            <div class="brand-icon">
                 H
-            </span>
+            </div>
 
-            <span class="brand-name">
+            <h2 class="brand-name">
                 HissaPay
-            </span>
+            </h2>
 
-        </a>
+            <div class="brand-subtitle">
+                Split expenses. Keep things simple.
+            </div>
 
-
-        <nav class="nav-links">
-
-            <a href="../index.html#features">
-                Features
-            </a>
-
-            <a href="../index.html#how-it-works">
-                How It Works
-            </a>
-
-            <a href="../index.html#about">
-                About
-            </a>
-
-            <a href="../index.html#contact">
-                Contact
-            </a>
-
-        </nav>
-
-    </div>
-
-</header>
+        </div>
 
 
+        <!-- DELETE FORM -->
 
-<!-- =========================
-     ACCOUNT DELETION
-========================= -->
-
-<main>
-
-<section class="delete-page">
-
-    <div class="container delete-container">
-
-
-        <div class="delete-header">
-
-            <p class="section-label">
-                HISSAPAY ACCOUNT
-            </p>
+        <div id="deleteSection">
 
             <h1>
                 Delete Your Account
             </h1>
 
-            <p>
-                You can permanently delete your HissaPay
-                account and associated data.
+            <p class="description">
+                Permanently delete your HissaPay account.
+                Please enter the email address and password
+                associated with your HissaPay account.
             </p>
 
-        </div>
 
+            <div class="warning">
 
-
-        <!-- IN-APP DELETION -->
-
-        <div class="delete-card">
-
-            <h2>
-                Delete your account from HissaPay
-            </h2>
-
-            <p>
-                If you are currently signed in to HissaPay,
-                the easiest way to delete your account is
-                directly from the application.
-            </p>
-
-            <ul>
-
-                <li>
-                    Open HissaPay.
-                </li>
-
-                <li>
-                    Open your Profile.
-                </li>
-
-                <li>
-                    Select <strong>Delete Account</strong>.
-                </li>
-
-                <li>
-                    Confirm the account deletion.
-                </li>
-
-                <li>
-                    Enter your current password when requested
-                    for security verification.
-                </li>
-
-            </ul>
-
-            <p>
-                After successful verification, HissaPay deletes
-                the Firebase Authentication account and clears
-                the HissaPay local database on the device.
-            </p>
-
-        </div>
-
-
-
-        <!-- EXTERNAL REQUEST -->
-
-        <div class="delete-card">
-
-            <h2>
-                Request account deletion
-            </h2>
-
-            <p>
-                If you cannot access HissaPay, you can request
-                account deletion by contacting HissaPay support.
-            </p>
-
-            <p>
-                Please send your request from the email address
-                associated with your HissaPay account and include
-                the subject:
-            </p>
-
-            <p>
                 <strong>
-                    HissaPay Account Deletion Request
+                    ⚠ This action cannot be undone.
                 </strong>
-            </p>
+
+                Your Firebase Authentication account will be
+                permanently deleted. You will not be able to
+                sign in with this account again.
+
+            </div>
 
 
-            <div class="email-request">
+            <!-- EMAIL -->
 
-                <p>
-                    Send your deletion request to:
-                </p>
+            <div class="form-group">
 
-                <!--
-                    IMPORTANT:
-                    Replace this email address with your real
-                    HissaPay support email before publishing.
-                -->
+                <label for="email">
+                    Email address
+                </label>
 
-                <a href="mailto:your-email@example.com?subject=HissaPay%20Account%20Deletion%20Request"
-                   class="email-button">
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your HissaPay email"
+                    autocomplete="email"
+                    required
+                >
 
-                    Request Account Deletion
+            </div>
 
+
+            <!-- PASSWORD -->
+
+            <div class="form-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <div class="password-container">
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="show-password"
+                        id="showPasswordButton"
+                    >
+                        Show
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONFIRMATION -->
+
+            <div class="confirmation">
+
+                <input
+                    type="checkbox"
+                    id="confirmDelete"
+                >
+
+                <label for="confirmDelete">
+
+                    I understand that deleting my account is
+                    permanent and cannot be undone.
+
+                </label>
+
+            </div>
+
+
+            <!-- DELETE BUTTON -->
+
+            <button
+                type="button"
+                class="delete-button"
+                id="deleteButton"
+            >
+                Delete My Account
+            </button>
+
+
+            <!-- ERROR -->
+
+            <div
+                id="errorMessage"
+                class="message error"
+            ></div>
+
+
+            <div class="security-note">
+
+                Your password is sent directly to Firebase
+                Authentication for verification. HissaPay does
+                not store your password.
+
+            </div>
+
+
+            <div class="privacy-link">
+
+                <a href="privacy-policy.html">
+                    Privacy Policy
                 </a>
 
             </div>
@@ -335,149 +594,437 @@
         </div>
 
 
+        <!-- SUCCESS -->
 
-        <!-- WHAT WILL BE DELETED -->
+        <div
+            id="successSection"
+            class="success-content"
+        >
 
-        <div class="delete-card">
+            <div class="success-icon">
+                ✓
+            </div>
 
             <h2>
-                What will be deleted?
+                Account Deleted
             </h2>
 
             <p>
-                When an authenticated HissaPay account is
-                successfully deleted:
-            </p>
-
-            <ul>
-
-                <li>
-                    The Firebase Authentication account
-                    associated with the HissaPay user is deleted.
-                </li>
-
-                <li>
-                    HissaPay's local database on the device
-                    is cleared.
-                </li>
-
-                <li>
-                    Locally stored HissaPay group, member and
-                    expense information is removed from the
-                    device.
-                </li>
-
-            </ul>
-
-        </div>
-
-
-
-        <!-- GUEST -->
-
-        <div class="delete-card">
-
-            <h2>
-                Using HissaPay as a guest?
-            </h2>
-
-            <p>
-                Guest mode does not create a Firebase
-                Authentication account.
+                Your HissaPay Firebase account has been
+                permanently deleted.
             </p>
 
             <p>
-                Guest information and locally stored expenses
-                can be removed by clearing the application's
-                local data or uninstalling the application.
+                Thank you for using HissaPay.
             </p>
 
-        </div>
-
-
-
-        <!-- WARNING -->
-
-        <div class="delete-card warning-card">
-
-            <h2>
-                Important
-            </h2>
-
-            <p>
-                Account deletion is permanent and cannot be
-                undone.
-            </p>
-
-            <p>
-                Please make sure you no longer need your
-                HissaPay account or the associated expense
-                information before requesting deletion.
-            </p>
-
-        </div>
-
-
-
-        <!-- PRIVACY -->
-
-        <div class="delete-card">
-
-            <h2>
-                Privacy Policy
-            </h2>
-
-            <p>
-                For more information about how HissaPay
-                handles user information, please review the
-                HissaPay Privacy Policy.
-            </p>
-
-            <a href="privacy-policy.html"
-               class="email-button">
-
-                View Privacy Policy
-
+            <a
+                href="../index.html"
+                class="back-link"
+            >
+                Return to HissaPay
             </a>
 
         </div>
 
-
-
-        <div class="delete-back">
-
-            <a href="../index.html">
-                ← Back to HissaPay
-            </a>
-
-        </div>
-
-
     </div>
 
-</section>
-
-</main>
+</div>
 
 
+<!-- ========================================================= -->
+<!-- FIREBASE -->
+<!-- ========================================================= -->
 
-<!-- =========================
-     FOOTER
-========================= -->
+<script type="module">
 
-<footer class="footer">
+    import {
+        initializeApp
+    } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
 
-    <div class="container footer-bottom">
 
-        <p>
-            © 2026 HissaPay. All rights reserved.
-        </p>
+    import {
+        getAuth,
+        signInWithEmailAndPassword,
+        deleteUser,
+        signOut
+    } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-auth.js";
 
-    </div>
 
-</footer>
+    // =========================================================
+    // FIREBASE CONFIGURATION
+    // =========================================================
 
+    const firebaseConfig = {
+
+        apiKey:
+            "AIzaSyChTuk8vlWYR2LF9imK24AJKvGw7Lqcxvo",
+
+        authDomain:
+            "expensemate-9aab6.firebaseapp.com",
+
+        projectId:
+            "expensemate-9aab6",
+
+        storageBucket:
+            "expensemate-9aab6.firebasestorage.app",
+
+        messagingSenderId:
+            "777877265483",
+
+        appId:
+            "1:777877265483:web:5ab0f2181d8ed150b241ce",
+
+        measurementId:
+            "G-JNMTRLD0WB"
+
+    };
+
+
+    // =========================================================
+    // INITIALIZE FIREBASE
+    // =========================================================
+
+    const app =
+        initializeApp(firebaseConfig);
+
+
+    const auth =
+        getAuth(app);
+
+
+    // =========================================================
+    // GET HTML ELEMENTS
+    // =========================================================
+
+    const emailInput =
+        document.getElementById("email");
+
+
+    const passwordInput =
+        document.getElementById("password");
+
+
+    const confirmDelete =
+        document.getElementById("confirmDelete");
+
+
+    const deleteButton =
+        document.getElementById("deleteButton");
+
+
+    const errorMessage =
+        document.getElementById("errorMessage");
+
+
+    const showPasswordButton =
+        document.getElementById("showPasswordButton");
+
+
+    const deleteSection =
+        document.getElementById("deleteSection");
+
+
+    const successSection =
+        document.getElementById("successSection");
+
+
+    // =========================================================
+    // SHOW / HIDE PASSWORD
+    // =========================================================
+
+    showPasswordButton.addEventListener(
+        "click",
+        function () {
+
+            if (
+                passwordInput.type === "password"
+            ) {
+
+                passwordInput.type =
+                    "text";
+
+                showPasswordButton.textContent =
+                    "Hide";
+
+            } else {
+
+                passwordInput.type =
+                    "password";
+
+                showPasswordButton.textContent =
+                    "Show";
+            }
+
+        }
+    );
+
+
+    // =========================================================
+    // SHOW ERROR
+    // =========================================================
+
+    function showError(message) {
+
+        errorMessage.textContent =
+            message;
+
+        errorMessage.style.display =
+            "block";
+    }
+
+
+    // =========================================================
+    // HIDE ERROR
+    // =========================================================
+
+    function hideError() {
+
+        errorMessage.textContent =
+            "";
+
+        errorMessage.style.display =
+            "none";
+    }
+
+
+    // =========================================================
+    // DELETE ACCOUNT
+    // =========================================================
+
+    deleteButton.addEventListener(
+        "click",
+        async function () {
+
+            hideError();
+
+
+            const email =
+                emailInput.value.trim();
+
+
+            const password =
+                passwordInput.value;
+
+
+            // -------------------------------------------------
+            // VALIDATE EMAIL
+            // -------------------------------------------------
+
+            if (!email) {
+
+                showError(
+                    "Please enter your email address."
+                );
+
+                emailInput.focus();
+
+                return;
+            }
+
+
+            // -------------------------------------------------
+            // VALIDATE PASSWORD
+            // -------------------------------------------------
+
+            if (!password) {
+
+                showError(
+                    "Please enter your password."
+                );
+
+                passwordInput.focus();
+
+                return;
+            }
+
+
+            // -------------------------------------------------
+            // CONFIRM DELETION
+            // -------------------------------------------------
+
+            if (!confirmDelete.checked) {
+
+                showError(
+                    "Please confirm that you understand this action is permanent."
+                );
+
+                return;
+            }
+
+
+            // -------------------------------------------------
+            // DISABLE BUTTON
+            // -------------------------------------------------
+
+            deleteButton.disabled =
+                true;
+
+            deleteButton.textContent =
+                "Verifying account...";
+
+
+            try {
+
+                // =================================================
+                // STEP 1
+                // SIGN IN WITH FIREBASE
+                // =================================================
+
+                const userCredential =
+                    await signInWithEmailAndPassword(
+                        auth,
+                        email,
+                        password
+                    );
+
+
+                const user =
+                    userCredential.user;
+
+
+                // =================================================
+                // STEP 2
+                // DELETE FIREBASE AUTH ACCOUNT
+                // =================================================
+
+                deleteButton.textContent =
+                    "Deleting account...";
+
+
+                await deleteUser(user);
+
+
+                // =================================================
+                // STEP 3
+                // SHOW SUCCESS
+                // =================================================
+
+                deleteSection.style.display =
+                    "none";
+
+                successSection.style.display =
+                    "block";
+
+
+            } catch (error) {
+
+                console.error(
+                    "Account deletion error:",
+                    error
+                );
+
+
+                // -------------------------------------------------
+                // GENERIC MESSAGE
+                // -------------------------------------------------
+                //
+                // We intentionally don't tell the user whether
+                // the email exists or not.
+                //
+                // This avoids unnecessarily exposing account
+                // existence information.
+                // -------------------------------------------------
+
+                let message =
+                    "We could not delete your account. Please check your email and password and try again.";
+
+
+                switch (error.code) {
+
+                    case "auth/invalid-credential":
+
+                    case "auth/invalid-login-credentials":
+
+                    case "auth/wrong-password":
+
+                    case "auth/user-not-found":
+
+                    case "auth/invalid-email":
+
+                        message =
+                            "The email address or password is incorrect.";
+
+                        break;
+
+
+                    case "auth/user-disabled":
+
+                        message =
+                            "This account has been disabled. Please contact HissaPay support.";
+
+                        break;
+
+
+                    case "auth/too-many-requests":
+
+                        message =
+                            "Too many attempts were made. Please wait a while and try again.";
+
+                        break;
+
+
+                    case "auth/network-request-failed":
+
+                        message =
+                            "A network error occurred. Please check your internet connection and try again.";
+
+                        break;
+
+
+                    case "auth/requires-recent-login":
+
+                        message =
+                            "Please sign in again and retry the account deletion.";
+
+                        break;
+
+
+                    default:
+
+                        message =
+                            "We could not delete your account. Please check your details and try again.";
+
+                        break;
+                }
+
+
+                showError(message);
+
+
+                // -------------------------------------------------
+                // SIGN OUT
+                // -------------------------------------------------
+
+                try {
+
+                    await signOut(auth);
+
+                } catch (signOutError) {
+
+                    console.error(
+                        "Sign-out error:",
+                        signOutError
+                    );
+                }
+
+
+                // -------------------------------------------------
+                // RESTORE BUTTON
+                // -------------------------------------------------
+
+                deleteButton.disabled =
+                    false;
+
+                deleteButton.textContent =
+                    "Delete My Account";
+
+            }
+
+        }
+    );
+
+</script>
 
 </body>
-
 </html>

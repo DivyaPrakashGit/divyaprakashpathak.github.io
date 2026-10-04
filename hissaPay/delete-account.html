@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Request deletion of your HissaPay account and associated data.">
+
+    <meta name="theme-color"
+          content="#2563eb">
+
+    <title>HissaPay Account Deletion</title>
+
+    <link rel="stylesheet"
+          href="../style.css">
+
+    <style>
+
+        .delete-page {
+            padding: 90px 0;
+        }
+
+        .delete-container {
+            max-width: 800px;
+        }
+
+        .delete-header {
+            margin-bottom: 45px;
+        }
+
+        .delete-header h1 {
+            font-size: clamp(2.4rem, 5vw, 4rem);
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            margin-bottom: 18px;
+        }
+
+        .delete-header p {
+            color: #64748b;
+            font-size: 1.05rem;
+        }
+
+        .delete-card {
+            padding: 35px;
+
+            border:
+                1px solid #e2e8f0;
+
+            border-radius: 18px;
+
+            background: #ffffff;
+
+            box-shadow:
+                0 15px 40px rgba(15, 23, 42, 0.07);
+
+            margin-bottom: 30px;
+        }
+
+        .delete-card h2 {
+            font-size: 1.45rem;
+            margin-bottom: 15px;
+        }
+
+        .delete-card p {
+            color: #526071;
+            margin-bottom: 15px;
+        }
+
+        .delete-card ul {
+            margin:
+                15px 0 20px 22px;
+        }
+
+        .delete-card li {
+            color: #526071;
+            margin-bottom: 9px;
+        }
+
+        .warning-card {
+            background: #fff7ed;
+            border-color: #fed7aa;
+        }
+
+        .warning-card h2 {
+            color: #9a3412;
+        }
+
+        .email-request {
+            margin-top: 25px;
+
+            padding: 22px;
+
+            border-radius: 12px;
+
+            background: #eef4ff;
+
+            border:
+                1px solid #d9e7ff;
+        }
+
+        .email-request p {
+            margin-bottom: 12px;
+        }
+
+        .email-button {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding:
+                12px 18px;
+
+            border-radius: 10px;
+
+            background: #2563eb;
+
+            color: #ffffff;
+
+            font-weight: 750;
+
+            text-decoration: none;
+
+            margin-top: 8px;
+        }
+
+        .email-button:hover {
+            background: #1d4ed8;
+        }
+
+        .delete-back {
+            margin-top: 40px;
+        }
+
+        .delete-back a {
+            color: #2563eb;
+
+            font-weight: 700;
+
+            text-decoration: none;
+        }
+
+        .delete-back a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header class="navbar">
+
+    <div class="container nav-container">
+
+        <a href="../index.html"
+           class="brand">
+
+            <span class="brand-icon">
+                H
+            </span>
+
+            <span class="brand-name">
+                HissaPay
+            </span>
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="../index.html#features">
+                Features
+            </a>
+
+            <a href="../index.html#how-it-works">
+                How It Works
+            </a>
+
+            <a href="../index.html#about">
+                About
+            </a>
+
+            <a href="../index.html#contact">
+                Contact
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+     ACCOUNT DELETION
+========================= -->
+
+<main>
+
+<section class="delete-page">
+
+    <div class="container delete-container">
+
+
+        <div class="delete-header">
+
+            <p class="section-label">
+                HISSAPAY ACCOUNT
+            </p>
+
+            <h1>
+                Delete Your Account
+            </h1>
+
+            <p>
+                You can permanently delete your HissaPay
+                account and associated data.
+            </p>
+
+        </div>
+
+
+
+        <!-- IN-APP DELETION -->
+
+        <div class="delete-card">
+
+            <h2>
+                Delete your account from HissaPay
+            </h2>
+
+            <p>
+                If you are currently signed in to HissaPay,
+                the easiest way to delete your account is
+                directly from the application.
+            </p>
+
+            <ul>
+
+                <li>
+                    Open HissaPay.
+                </li>
+
+                <li>
+                    Open your Profile.
+                </li>
+
+                <li>
+                    Select <strong>Delete Account</strong>.
+                </li>
+
+                <li>
+                    Confirm the account deletion.
+                </li>
+
+                <li>
+                    Enter your current password when requested
+                    for security verification.
+                </li>
+
+            </ul>
+
+            <p>
+                After successful verification, HissaPay deletes
+                the Firebase Authentication account and clears
+                the HissaPay local database on the device.
+            </p>
+
+        </div>
+
+
+
+        <!-- EXTERNAL REQUEST -->
+
+        <div class="delete-card">
+
+            <h2>
+                Request account deletion
+            </h2>
+
+            <p>
+                If you cannot access HissaPay, you can request
+                account deletion by contacting HissaPay support.
+            </p>
+
+            <p>
+                Please send your request from the email address
+                associated with your HissaPay account and include
+                the subject:
+            </p>
+
+            <p>
+                <strong>
+                    HissaPay Account Deletion Request
+                </strong>
+            </p>
+
+
+            <div class="email-request">
+
+                <p>
+                    Send your deletion request to:
+                </p>
+
+                <!--
+                    IMPORTANT:
+                    Replace this email address with your real
+                    HissaPay support email before publishing.
+                -->
+
+                <a href="mailto:your-email@example.com?subject=HissaPay%20Account%20Deletion%20Request"
+                   class="email-button">
+
+                    Request Account Deletion
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- WHAT WILL BE DELETED -->
+
+        <div class="delete-card">
+
+            <h2>
+                What will be deleted?
+            </h2>
+
+            <p>
+                When an authenticated HissaPay account is
+                successfully deleted:
+            </p>
+
+            <ul>
+
+                <li>
+                    The Firebase Authentication account
+                    associated with the HissaPay user is deleted.
+                </li>
+
+                <li>
+                    HissaPay's local database on the device
+                    is cleared.
+                </li>
+
+                <li>
+                    Locally stored HissaPay group, member and
+                    expense information is removed from the
+                    device.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- GUEST -->
+
+        <div class="delete-card">
+
+            <h2>
+                Using HissaPay as a guest?
+            </h2>
+
+            <p>
+                Guest mode does not create a Firebase
+                Authentication account.
+            </p>
+
+            <p>
+                Guest information and locally stored expenses
+                can be removed by clearing the application's
+                local data or uninstalling the application.
+            </p>
+
+        </div>
+
+
+
+        <!-- WARNING -->
+
+        <div class="delete-card warning-card">
+
+            <h2>
+                Important
+            </h2>
+
+            <p>
+                Account deletion is permanent and cannot be
+                undone.
+            </p>
+
+            <p>
+                Please make sure you no longer need your
+                HissaPay account or the associated expense
+                information before requesting deletion.
+            </p>
+
+        </div>
+
+
+
+        <!-- PRIVACY -->
+
+        <div class="delete-card">
+
+            <h2>
+                Privacy Policy
+            </h2>
+
+            <p>
+                For more information about how HissaPay
+                handles user information, please review the
+                HissaPay Privacy Policy.
+            </p>
+
+            <a href="privacy-policy.html"
+               class="email-button">
+
+                View Privacy Policy
+
+            </a>
+
+        </div>
+
+
+
+        <div class="delete-back">
+
+            <a href="../index.html">
+                ← Back to HissaPay
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+    <div class="container footer-bottom">
+
+        <p>
+            © 2026 HissaPay. All rights reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>

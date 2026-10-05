@@ -112,6 +112,7 @@ a {
 
 .brand-name {
     letter-spacing: -0.3px;
+    color: #8BE22E;
 }
 
 .nav-links {
@@ -194,37 +195,28 @@ a {
 
 .badge-dot {
     width: 8px;
-
     height: 8px;
-
     border-radius: 50%;
-
     background: #2563eb;
 }
 
 .hero h1 {
     font-size: clamp(3rem, 6vw, 5.4rem);
-
     line-height: 1.04;
-
     letter-spacing: -3px;
-
     margin-bottom: 28px;
+        color: #0066CC;
 }
 
 .hero h1 span {
     display: block;
-
-    color: #2563eb;
+    color: #55C51B;
 }
 
 .hero-description {
     max-width: 620px;
-
     font-size: 1.18rem;
-
     color: #526071;
-
     margin-bottom: 35px;
 }
 
@@ -501,30 +493,23 @@ a {
 }
 
 .section-label {
-    color: #2563eb;
-
+    color: #55C51B;
     font-size: 0.75rem;
-
     font-weight: 850;
-
     letter-spacing: 2px;
-
     margin-bottom: 12px;
 }
 
 .section-heading h2 {
     font-size: clamp(2.1rem, 4vw, 3.3rem);
-
     line-height: 1.15;
-
     letter-spacing: -1.5px;
-
     margin-bottom: 18px;
+    color: #0066CC;
 }
 
 .section-heading > p:last-child {
     color: #64748b;
-
     font-size: 1.05rem;
 }
 
@@ -682,12 +667,10 @@ a {
 
 .about-text h2 {
     font-size: clamp(2.1rem, 4vw, 3.2rem);
-
     line-height: 1.15;
-
     letter-spacing: -1.5px;
-
     margin-bottom: 25px;
+      color: #0066CC;
 }
 
 .about-text p:not(.section-label) {
@@ -772,7 +755,7 @@ a {
     font-size: clamp(2rem, 4vw, 3rem);
 
     line-height: 1.15;
-
+    color: #0066CC;
     letter-spacing: -1px;
 
     margin-bottom: 18px;
@@ -847,11 +830,8 @@ a {
 
 .contact-section h2 {
     color: #ffffff;
-
     font-size: clamp(2.2rem, 5vw, 3.5rem);
-
     letter-spacing: -1.5px;
-
     margin-bottom: 18px;
 }
 
